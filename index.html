@@ -1,232 +1,182 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <style>
+    /* Grayscale filter for black & white effect */
+    body {
+      filter: grayscale(100%);
+    }
 
-        header {
-            background-color: #111;
-            padding: 1rem 0;
-        }
+    /* Keyframes for icon bounce */
+    @keyframes bounce-slow {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+    .bounce-slow {
+      animation: bounce-slow 3s infinite;
+    }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5rem 1rem;
-            background-color: #f222;
-        }
-
-        .hero img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-right: 3rem; /* Added more space between the image and the text */
-            border: 3px solid #fff;
-        }
-
-        .hero .text-content {
-            text-align: left;
-        }
-
-        .hero .text-content h1 {
-            margin: 0;
-        }
-
-        /* Blue Color for Education and Profession */
-        .hero .text-content h2 {
-            color: lightblue;
-        }
-
-        .projects {
-            padding: 2rem 1rem;
-            background-color: black;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .project-item {
-            background-color: maroon;
-            padding: 1rem;
-            border-radius: 5px;
-        }
-
-        .contact {
-            padding: 2rem 1rem;
-            background-color: #222;
-        }
-
-        .contact form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .contact form label {
-            margin-bottom: 0.5rem;
-        }
-
-        .contact form input, .contact form textarea {
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        .contact form button {
-            padding: 0.5rem;
-            background-color: #555;
-            color: lime;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .contact form button:hover {
-            background-color: #777;
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #111;
-        }
-
-        .social-icons {
-            margin-top: 1rem;
-        }
-
-        .social-icons a {
-            color: #fff;
-            margin: 0 0.5rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #777;
-        }
-    </style>
+    /* Menu icon hover animation */
+    .menu-icon:hover {
+      animation: bounce-slow 1s infinite;
+      color: #22d3ee; /* cyan-400 */
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-black text-white font-sans">
 
-    <section id="home" class="hero">
-        <img src="port.jpg" alt="Denis">
-        <div class="text-content">
-            <h1>Welcome to My Portfolio</h1>
-            Name:<h2> Mwaki Denis</h2>
-            Education: <h2>Bsc. Computer Science</h2>
-            Profession:<h2> A Web Developer</h2>
-        </div>
-    </section>
+  <!-- Header & Nav -->
+  <header class="bg-gray-900 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-center space-x-10 text-lg font-semibold uppercase tracking-wider">
+      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+        <i class="fas fa-home"></i><span>Home</span>
+      </a>
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+        <i class="fas fa-code"></i><span>Projects</span>
+      </a>
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+        <i class="fas fa-envelope"></i><span>Contact</span>
+      </a>
+    </nav>
+  </header>
 
-    <section id="projects" class="projects">
-        <h2>My Profession</h2>
-        I am a Professional Web Developer specializing in:
-        <ol>
-            <li>UI/UX with Responsive Design.</li>
-            <li>Server-Side Logic using Python, Ruby on Rails, Node.js or Express.js.</li>
-            <li>Databases with MongoDB, PostgreSQL, MariaDB & Application.</li>
-            <li>Deployment and Hosting set-up.</li>
-            <li>Maintenance & Updates using Google Analytics.</li>
-        </ol>
-        <div class="project-grid">
-            <div class="project-item">
-                <h3>Front-End</h3>
-                <p>I specialize in Front-End Development with HTML, CSS & JavaScript.</p>
-            </div>
-            <div class="project-item">
-                <h3>Back-End</h3>
-                <p>I craft Back-End (Server-side) with Node.js & Express.js ensuring accurate approach by the client using the website.</p>
-            </div>
-            <div class="project-item">
-                <h3>Database</h3>
-                <p>I create tables on the Database using MongoDB ensuring precision in data storage and retrieval.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col md:flex-row items-center justify-center py-20 px-6 bg-black container mx-auto filter-none">
+    <img
+      src="port.jpg"
+      alt="Denis"
+      class="w-40 h-40 rounded-full border-4 border-white mb-8 md:mb-0 md:mr-12 shadow-lg"
+    />
+    <div class="text-left max-w-xl">
+      <h1 class="text-4xl font-extrabold mb-2">Welcome to My Portfolio</h1>
+      <p class="text-xl uppercase tracking-wide text-gray-400 mb-6">
+        Name: <span class="text-cyan-400 font-bold">Mwaki Denis</span>
+      </p>
+      <p class="text-xl uppercase tracking-wide text-gray-400 mb-6">
+        Education: <span class="text-cyan-400 font-bold">BSc. Computer Science</span>
+      </p>
+      <p class="text-xl uppercase tracking-wide text-gray-400">
+        Profession: <span class="text-cyan-400 font-bold">A Web Developer</span>
+      </p>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects" class="bg-black py-16 px-6 container mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center text-gray-300 tracking-wide">My Profession</h2>
+    <p class="text-center max-w-3xl mx-auto mb-10 text-gray-400">
+      I am a Professional Web Developer specializing in:
+    </p>
 
-    <footer>
-        <div class="social-icons">
-            <a href="https://wa.me/+254798750585" target="_blank" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.tiktok.com/code_master_mind" target="_blank" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.facebook.com/mwaki_denis" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.linkedin.com/mwaki_denis" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://www.instagram.com/mwaki_denis" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://www.mwakidenice@gmail.com" target="_blank" aria-label="Gmail">
-                <i class="fab fa-google"></i>
-            </a>
-        </div>
-        <p>Copyright&copy;2025 DenisDev. All rights reserved.</p>
-    </footer>
+    <ol class="max-w-4xl mx-auto list-decimal list-inside space-y-3 text-gray-400 mb-12">
+      <li>UI/UX with Responsive Design.</li>
+      <li>Server-Side Logic using Python, Ruby on Rails, Node.js or Express.js.</li>
+      <li>Databases with MongoDB, PostgreSQL, MariaDB & Application.</li>
+      <li>Deployment and Hosting set-up.</li>
+      <li>Maintenance & Updates using Google Analytics.</li>
+    </ol>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-pencil-ruler text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
+        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Front-End</h3>
+        <p class="text-gray-400">I specialize in Front-End Development with HTML, CSS & JavaScript.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-server text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
+        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Back-End</h3>
+        <p class="text-gray-400">I craft Back-End (Server-side) with Node.js & Express.js ensuring accurate approach by the client using the website.</p>
+      </div>
+
+      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-database text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
+        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Database</h3>
+        <p class="text-gray-400">I create tables on the Database using MongoDB ensuring precision in data storage and retrieval.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-900 py-16 px-6 container mx-auto max-w-lg rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold mb-8 text-cyan-400 text-center uppercase tracking-wide">Contact Me</h2>
+    <form id="contact-form" class="flex flex-col space-y-6">
+      <label for="name" class="text-gray-300 font-semibold">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      />
+
+      <label for="email" class="text-gray-300 font-semibold">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      />
+
+      <label for="message" class="text-gray-300 font-semibold">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        required
+        rows="4"
+        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 rounded transition-colors duration-300"
+      >
+        Send
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-center py-6 mt-20">
+    <div class="flex justify-center space-x-6 mb-4 text-gray-400">
+      <a href="https://wa.me/+254798750585" target="_blank" aria-label="WhatsApp" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fab fa-whatsapp fa-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/code_master_mind" target="_blank" aria-label="TikTok" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fab fa-tiktok fa-lg"></i>
+      </a>
+      <a href="https://www.facebook.com/mwaki_denis" target="_blank" aria-label="Facebook" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="https://www.linkedin.com/mwaki_denis" target="_blank" aria-label="LinkedIn" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/mwaki_denis" target="_blank" aria-label="Instagram" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="mailto:mwakidenice@gmail.com" target="_blank" aria-label="Gmail" class="hover:text-cyan-400 transition-colors duration-300">
+        <i class="fas fa-envelope fa-lg"></i>
+      </a>
+    </div>
+    <p class="text-gray-500 text-sm">&copy; 2025 DenisDev. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
