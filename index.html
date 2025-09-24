@@ -12,12 +12,17 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
   <style>
-    /* Grayscale filter for black & white effect */
+    /* Grayscale filter for background, but keep icons colored */
     body {
       filter: grayscale(100%);
+      background-color: #ffffff;
+      color: #000000;
+    }
+    /* For icons we override filter */
+    .colored-icon {
+      filter: none;
     }
 
-    /* Keyframes for icon bounce */
     @keyframes bounce-slow {
       0%, 100% {
         transform: translateY(0);
@@ -30,123 +35,158 @@
       animation: bounce-slow 3s infinite;
     }
 
-    /* Menu icon hover animation */
     .menu-icon:hover {
       animation: bounce-slow 1s infinite;
-      color: #22d3ee; /* cyan-400 */
+      color: #06b6d4; /* cyan-400 */
     }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-white text-black font-sans">
 
   <!-- Header & Nav -->
-  <header class="bg-gray-900 shadow-md">
+  <header class="bg-gray-100 shadow-md">
     <nav class="container mx-auto px-6 py-4 flex justify-center space-x-10 text-lg font-semibold uppercase tracking-wider">
-      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
         <i class="fas fa-home"></i><span>Home</span>
       </a>
-      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+      <a href="#projects" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
         <i class="fas fa-code"></i><span>Projects</span>
       </a>
-      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon">
+      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
         <i class="fas fa-envelope"></i><span>Contact</span>
       </a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="flex flex-col md:flex-row items-center justify-center py-20 px-6 bg-black container mx-auto filter-none">
+  <section id="home" class="flex flex-col md:flex-row items-center justify-center py-20 px-6 container mx-auto">
     <img
       src="port.jpg"
       alt="Denis"
-      class="w-40 h-40 rounded-full border-4 border-white mb-8 md:mb-0 md:mr-12 shadow-lg"
+      class="w-40 h-40 rounded-full border-4 border-black mb-8 md:mb-0 md:mr-12 shadow-lg"
     />
     <div class="text-left max-w-xl">
       <h1 class="text-4xl font-extrabold mb-2">Welcome to My Portfolio</h1>
-      <p class="text-xl uppercase tracking-wide text-gray-400 mb-6">
-        Name: <span class="text-cyan-400 font-bold">Mwaki Denis</span>
+      <p class="text-xl uppercase tracking-wide mb-6">
+        Name: <span class="text-cyan-500 font-bold">Mwaki Denis</span>
       </p>
-      <p class="text-xl uppercase tracking-wide text-gray-400 mb-6">
-        Education: <span class="text-cyan-400 font-bold">BSc. Computer Science</span>
+      <p class="text-xl uppercase tracking-wide mb-6">
+        Education: <span class="text-cyan-500 font-bold">BSc. Computer Science</span>
       </p>
-      <p class="text-xl uppercase tracking-wide text-gray-400">
-        Profession: <span class="text-cyan-400 font-bold">A Web Developer</span>
+      <p class="text-xl uppercase tracking-wide">
+        Profession: <span class="text-cyan-500 font-bold">Web Developer</span>
       </p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-black py-16 px-6 container mx-auto">
-    <h2 class="text-3xl font-bold mb-4 text-center text-gray-300 tracking-wide">My Profession</h2>
-    <p class="text-center max-w-3xl mx-auto mb-10 text-gray-400">
-      I am a Professional Web Developer specializing in:
+  <!-- Projects / Skills Section -->
+  <section id="projects" class="py-16 px-6 container mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center tracking-wide">My Skills & Profession</h2>
+    <p class="text-center max-w-3xl mx-auto mb-10">
+      I am a Professional Web Developer & Designer with skills in:
     </p>
 
-    <ol class="max-w-4xl mx-auto list-decimal list-inside space-y-3 text-gray-400 mb-12">
-      <li>UI/UX with Responsive Design.</li>
-      <li>Server-Side Logic using Python, Ruby on Rails, Node.js or Express.js.</li>
-      <li>Databases with MongoDB, PostgreSQL, MariaDB & Application.</li>
-      <li>Deployment and Hosting set-up.</li>
-      <li>Maintenance & Updates using Google Analytics.</li>
+    <ol class="max-w-4xl mx-auto list-decimal list-inside space-y-3 mb-12">
+      <li>UI/UX with Responsive Design</li>
+      <li>Server-Side Logic using Python, Ruby on Rails, Node.js / Express.js</li>
+      <li>Databases with MongoDB, PostgreSQL, MariaDB</li>
+      <li>Deployment & Hosting Setup</li>
+      <li>Maintenance, Analytics & Updates</li>
     </ol>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-
-      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
-        <i class="fas fa-pencil-ruler text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
-        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Front-End</h3>
-        <p class="text-gray-400">I specialize in Front-End Development with HTML, CSS & JavaScript.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      <!-- Front-End -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-pencil-ruler colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Front-End</h3>
+        <p>HTML, CSS, JavaScript</p>
       </div>
 
-      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
-        <i class="fas fa-server text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
-        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Back-End</h3>
-        <p class="text-gray-400">I craft Back-End (Server-side) with Node.js & Express.js ensuring accurate approach by the client using the website.</p>
+      <!-- UI/UX -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-object-group colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">UI/UX</h3>
+        <p>Design, Wireframes, Prototyping</p>
       </div>
 
-      <div class="bg-gray-900 rounded-lg p-6 shadow-lg text-center">
-        <i class="fas fa-database text-cyan-400 text-6xl mb-4 bounce-slow mx-auto"></i>
-        <h3 class="text-xl font-semibold text-cyan-400 mb-2">Database</h3>
-        <p class="text-gray-400">I create tables on the Database using MongoDB ensuring precision in data storage and retrieval.</p>
+      <!-- Back-End / Server -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-server colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Back-End</h3>
+        <p>Node.js, Express.js, APIs</p>
       </div>
 
+      <!-- Database -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-database colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Database</h3>
+        <p>MongoDB, PostgreSQL, MariaDB</p>
+      </div>
+
+      <!-- Node.js -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fab fa-node-js colored-icon text-green-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Node.js</h3>
+        <p>Server-side JavaScript</p>
+      </div>
+
+      <!-- Next.js -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fab fa-react colored-icon text-blue-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Next.js</h3>
+        <p>React Framework, SSR / SSG</p>
+      </div>
+
+      <!-- Another Skill – DevOps / Deployment -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-cloud-upload-alt colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Deployment</h3>
+        <p>AWS, Heroku, CI/CD</p>
+      </div>
+
+      <!-- Another Skill – Analytics / Maintenance -->
+      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-chart-line colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-500 mb-2">Analytics</h3>
+        <p>Google Analytics, monitoring</p>
+      </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-gray-900 py-16 px-6 container mx-auto max-w-lg rounded-lg shadow-lg">
-    <h2 class="text-3xl font-bold mb-8 text-cyan-400 text-center uppercase tracking-wide">Contact Me</h2>
+  <section id="contact" class="py-16 px-6 container mx-auto max-w-lg rounded-lg shadow-lg bg-gray-100">
+    <h2 class="text-3xl font-bold mb-8 text-cyan-500 text-center uppercase tracking-wide">Contact Me</h2>
     <form id="contact-form" class="flex flex-col space-y-6">
-      <label for="name" class="text-gray-300 font-semibold">Name:</label>
+      <label for="name" class="font-semibold">Name:</label>
       <input
         type="text"
         id="name"
         name="name"
         required
-        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        class="px-4 py-2 rounded bg-white border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
       />
 
-      <label for="email" class="text-gray-300 font-semibold">Email:</label>
+      <label for="email" class="font-semibold">Email:</label>
       <input
         type="email"
         id="email"
         name="email"
         required
-        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        class="px-4 py-2 rounded bg-white border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
       />
 
-      <label for="message" class="text-gray-300 font-semibold">Message:</label>
+      <label for="message" class="font-semibold">Message:</label>
       <textarea
         id="message"
         name="message"
         required
         rows="4"
-        class="px-4 py-2 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
+        class="px-4 py-2 rounded bg-white border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-cyan-500"
       ></textarea>
 
       <button
         type="submit"
-        class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 rounded transition-colors duration-300"
+        class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded transition-colors duration-300"
       >
         Send
       </button>
@@ -154,25 +194,25 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-center py-6 mt-20">
-    <div class="flex justify-center space-x-6 mb-4 text-gray-400">
-      <a href="https://wa.me/+254798750585" target="_blank" aria-label="WhatsApp" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fab fa-whatsapp fa-lg"></i>
+  <footer class="bg-gray-100 text-center py-6 mt-20">
+    <div class="flex justify-center space-x-6 mb-4 text-gray-600">
+      <a href="https://wa.me/+254798750585" target="_blank" aria-label="WhatsApp" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fab fa-whatsapp fa-lg text-green-500"></i>
       </a>
-      <a href="https://www.tiktok.com/code_master_mind" target="_blank" aria-label="TikTok" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fab fa-tiktok fa-lg"></i>
+      <a href="https://www.tiktok.com/code_master_mind" target="_blank" aria-label="TikTok" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fab fa-tiktok fa-lg text-blue-500"></i>
       </a>
-      <a href="https://www.facebook.com/mwaki_denis" target="_blank" aria-label="Facebook" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fab fa-facebook fa-lg"></i>
+      <a href="https://www.facebook.com/mwaki_denis" target="_blank" aria-label="Facebook" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fab fa-facebook fa-lg text-blue-500"></i>
       </a>
-      <a href="https://www.linkedin.com/mwaki_denis" target="_blank" aria-label="LinkedIn" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fab fa-linkedin fa-lg"></i>
+      <a href="https://www.linkedin.com/mwaki_denis" target="_blank" aria-label="LinkedIn" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fab fa-linkedin fa-lg text-blue-500"></i>
       </a>
-      <a href="https://www.instagram.com/mwaki_denis" target="_blank" aria-label="Instagram" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fab fa-instagram fa-lg"></i>
+      <a href="https://www.instagram.com/mwaki_denis" target="_blank" aria-label="Instagram" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fab fa-instagram fa-lg text-pink-500"></i>
       </a>
-      <a href="mailto:mwakidenice@gmail.com" target="_blank" aria-label="Gmail" class="hover:text-cyan-400 transition-colors duration-300">
-        <i class="fas fa-envelope fa-lg"></i>
+      <a href="mailto:mwakidenice@gmail.com" target="_blank" aria-label="Gmail" class="hover:text-cyan-500 transition-colors duration-300 colored-icon">
+        <i class="fas fa-envelope fa-lg text-red-500"></i>
       </a>
     </div>
     <p class="text-gray-500 text-sm">&copy; 2025 DenisDev. All rights reserved.</p>
