@@ -317,46 +317,47 @@
     <h2 class="text-3xl font-bold mb-8 tracking-wide">📈 GitHub Activity Graph</h2>
     <img src="https://github-readme-activity-graph.vercel.app/graph?username=mac-de152&theme=react-dark" alt="GitHub Activity Graph" class="w-full rounded-lg shadow-lg" />
   </section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 px-6 container mx-auto max-w-lg rounded-lg shadow-lg bg-gray-100 dark:bg-cyan-900">
+  <h2 class="text-3xl font-bold mb-8 text-cyan-500 text-center lowercase tracking-wide">Contact Me</h2>
+  <form id="contact-form" class="flex flex-col space-y-6">
+    
+    <label for="name" class="font-semibold text-cyan-600 dark:text-cyan-400">Name:</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+      class="px-4 py-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400"
+    />
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 container mx-auto max-w-lg rounded-lg shadow-lg bg-gray-100 dark:bg-cyan-900">
-    <h2 class="text-3xl font-bold mb-8 text-cyan-500 text-center lowercase tracking-wide">Contact Me</h2>
-    <form id="contact-form" class="flex flex-col space-y-6">
-      <label for="name" class="font-semibold text-cyan-600 dark:text-cyan-400">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        class="px-4 py-2 rounded bg-cyan-100 dark:bg-cyan-800 border border-cyan-300 dark:border-cyan-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-      />
+    <label for="email" class="font-semibold text-cyan-600 dark:text-cyan-400">Email:</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+      class="px-4 py-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400"
+    />
 
-      <label for="email" class="font-semibold text-cyan-600 dark:text-cyan-400">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        class="px-4 py-2 rounded bg-cyan-100 dark:bg-cyan-800 border border-cyan-300 dark:border-cyan-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-      />
+    <label for="message" class="font-semibold text-cyan-600 dark:text-cyan-400">Message:</label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="4"
+      class="px-4 py-2 rounded bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400"
+    ></textarea>
 
-      <label for="message" class="font-semibold text-cyan-600 dark:text-cyan-400">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        required
-        rows="4"
-        class="px-4 py-2 rounded bg-cyan-100 dark:bg-cyan-800 border border-cyan-300 dark:border-cyan-700 text-black dark:text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-      ></textarea>
+    <button
+      type="submit"
+      class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded transition-colors duration-300"
+    >
+      Send
+    </button>
+  </form>
+</section>
 
-      <button
-        type="submit"
-        class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 rounded transition-colors duration-300"
-      >
-        Send
-      </button>
-    </form>
-  </section>
 
   <!-- Footer -->
   <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 mt-20">
@@ -404,6 +405,7 @@
 
 </body>
 </html>
+
 
 
 
