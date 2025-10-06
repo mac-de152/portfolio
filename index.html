@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+i<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -6,6 +6,11 @@
   <title>Mwaki Denis - Software Developer Portfolio</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
   <!-- Font Awesome CDN -->
   <link
     rel="stylesheet"
@@ -46,23 +51,31 @@
     }
   </style>
 </head>
-<body class="bg-white text-black font-sans fade-in">
+<body class="bg-white dark:bg-gray-900 text-black dark:text-white font-sans fade-in transition-colors duration-300">
 
   <!-- Header & Nav -->
-  <header class="bg-gray-100 shadow-md">
-    <nav class="container mx-auto px-6 py-4 flex justify-center space-x-10 text-lg font-semibold uppercase tracking-wider">
-      <a href="#home" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
-        <i class="fas fa-home"></i><span>Home</span>
-      </a>
-      <a href="#about" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
-        <i class="fas fa-user"></i><span>About</span>
-      </a>
-      <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
-        <i class="fas fa-code"></i><span>Skills</span>
-      </a>
-      <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
-        <i class="fas fa-envelope"></i><span>Contact</span>
-      </a>
+  <header class="bg-gray-100 dark:bg-gray-800 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-lg font-semibold uppercase tracking-wider">
+      <div class="flex space-x-10">
+        <a href="#home" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
+          <i class="fas fa-home"></i><span>Home</span>
+        </a>
+        <a href="#about" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
+          <i class="fas fa-user"></i><span>About</span>
+        </a>
+        <a href="#skills" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
+          <i class="fas fa-code"></i><span>Skills</span>
+        </a>
+        <a href="#contact" class="hover:text-cyan-400 transition-colors duration-300 flex items-center space-x-2 menu-icon colored-icon">
+          <i class="fas fa-envelope"></i><span>Contact</span>
+        </a>
+      </div>
+      <!-- Dark Mode Toggle -->
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="dark-mode-toggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-cyan-300 dark:peer-focus:ring-cyan-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-cyan-600"></div>
+        <span id="toggle-label" class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Dark Mode</span>
+      </label>
     </nav>
   </header>
 
@@ -110,115 +123,157 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
       <!-- Front-End -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-pencil-ruler colored-icon text-blue-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-blue-600 mb-2">Front-End</h3>
         <p>HTML, CSS, JavaScript</p>
       </div>
 
       <!-- UI/UX -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-object-group colored-icon text-pink-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-pink-600 mb-2">UI/UX</h3>
         <p>Design, Wireframes, Prototyping</p>
       </div>
 
       <!-- Back-End / Server -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-server colored-icon text-green-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-green-600 mb-2">Back-End</h3>
         <p>Node.js, Express.js, APIs</p>
       </div>
 
       <!-- Database -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-database colored-icon text-purple-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-purple-600 mb-2">Database</h3>
         <p>MySQL, MongoDB, PostgreSQL, Firebase, MariaDB</p>
       </div>
 
       <!-- Node.js -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-node-js colored-icon text-green-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-cyan-500 mb-2">Node.js</h3>
         <p>Server-side JavaScript</p>
       </div>
 
       <!-- Next.js -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-react colored-icon text-blue-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-cyan-500 mb-2">Next.js</h3>
         <p>React Framework, SSR / SSG</p>
       </div>
 
       <!-- JavaScript -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-js-square colored-icon text-yellow-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-cyan-500 mb-2">JavaScript</h3>
         <p>Dynamic Web Development</p>
       </div>
 
       <!-- Deployment -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-cloud-upload-alt colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-cyan-500 mb-2">Deployment</h3>
         <p>AWS, Heroku, CI/CD</p>
       </div>
 
       <!-- Analytics -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-chart-line colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-cyan-500 mb-2">Analytics</h3>
         <p>Google Analytics, monitoring</p>
       </div>
 
       <!-- Flutter -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-flutter colored-icon text-blue-400 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-blue-500 mb-2">Flutter</h3>
         <p>Mobile App Development</p>
       </div>
 
       <!-- Kotlin -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-kotlin colored-icon text-purple-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-purple-600 mb-2">Kotlin</h3>
         <p>Android Development</p>
       </div>
 
       <!-- Cybersecurity -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fas fa-shield-alt colored-icon text-red-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-red-600 mb-2">Cybersecurity</h3>
         <p>Security, Encryption</p>
       </div>
 
       <!-- Python -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-python colored-icon text-yellow-600 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-yellow-700 mb-2">Python</h3>
         <p>Scripting, Automation</p>
       </div>
 
       <!-- Java -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-java colored-icon text-orange-500 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-orange-600 mb-2">Java</h3>
         <p>Enterprise Applications</p>
       </div>
 
       <!-- Git -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-git-alt colored-icon text-gray-700 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-gray-800 mb-2">Git</h3>
         <p>Version Control</p>
       </div>
 
       <!-- Docker -->
-      <div class="bg-gray-100 rounded-lg p-6 shadow-lg text-center">
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
         <i class="fab fa-docker colored-icon text-blue-600 text-6xl mb-4 bounce-slow"></i>
         <h3 class="text-xl font-semibold text-blue-700 mb-2">Docker</h3>
         <p>Containerization</p>
+      </div>
+
+      <!-- React -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fab fa-react colored-icon text-blue-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-blue-600 mb-2">React</h3>
+        <p>Component-based UI Library</p>
+      </div>
+
+      <!-- Vue.js -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fab fa-vuejs colored-icon text-green-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-green-600 mb-2">Vue.js</h3>
+        <p>Progressive JavaScript Framework</p>
+      </div>
+
+      <!-- TypeScript -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fab fa-js-square colored-icon text-blue-600 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-blue-700 mb-2">TypeScript</h3>
+        <p>Typed JavaScript Superset</p>
+      </div>
+
+      <!-- GraphQL -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-project-diagram colored-icon text-pink-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-pink-600 mb-2">GraphQL</h3>
+        <p>Query Language for APIs</p>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-wind colored-icon text-cyan-500 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-cyan-600 mb-2">Tailwind CSS</h3>
+        <p>Utility-first CSS Framework</p>
+      </div>
+
+      <!-- MongoDB -->
+      <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-6 shadow-lg text-center">
+        <i class="fas fa-leaf colored-icon text-green-600 text-6xl mb-4 bounce-slow"></i>
+        <h3 class="text-xl font-semibold text-green-700 mb-2">MongoDB</h3>
+        <p>NoSQL Database</p>
       </div>
     </div>
   </section>
@@ -304,9 +359,48 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 text-center py-6 mt-20">
-    <p class="text-gray-500 text-sm">&copy; 2025 Mwaki Denis. All rights reserved.</p>
+  <footer class="bg-gray-100 dark:bg-gray-800 text-center py-6 mt-20">
   </footer>
+
+  <!-- Floating Contact Button -->
+  <a href="#contact" class="fixed bottom-6 right-6 bg-cyan-500 hover:bg-cyan-600 text-white p-4 rounded-full shadow-lg transition-colors duration-300 z-50">
+    <i class="fas fa-envelope text-xl"></i>
+  </a>
+
+  <script>
+    const toggle = document.getElementById('dark-mode-toggle');
+    const label = document.getElementById('toggle-label');
+    const html = document.documentElement;
+
+    // Function to update label
+    function updateLabel() {
+      if (html.classList.contains('dark')) {
+        label.textContent = 'Light Mode';
+      } else {
+        label.textContent = 'Dark Mode';
+      }
+    }
+
+    // Check for saved theme preference or default to light mode
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+      html.classList.add('dark');
+      toggle.checked = true;
+    }
+    updateLabel();
+
+    // Toggle theme on change
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      updateLabel();
+    });
+  </script>
 
 </body>
 </html>
